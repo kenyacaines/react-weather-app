@@ -14,8 +14,8 @@ export default function WeatherInfo(props) {
           <div>
             <img
               className="text-capitalize"
-              src={props.data.imgUrl}
-              alt={props.data.description}
+              src={props.data.iconUrl}
+              alt
             />
           </div>
           <div>
