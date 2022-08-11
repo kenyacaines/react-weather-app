@@ -21,17 +21,17 @@ export default function Weather() {
             <input
               type="search"
               className="form-control shadow-sm"
-              placeholder="Enter a city"
+              placeholder="Enter a city..."
               autoFocus={false}
               autoComplete="off"
             />
           </div>
           <div className="col-2">
-            <button className="btn btn shadow-sm w-4" type="submit">
+            <button className="btn btn shadow-sm" type="submit">
               <i className="fa-solid fa-magnifying-glass"></i>
             </button>
             <span className="location-buton">
-              <button className="btn btn shadow-sm w-2" type="submit">
+              <button className="btn btn shadow-sm" type="submit">
                 <i className="fa-solid fa-location-dot"></i>
               </button>
             </span>
@@ -51,33 +51,29 @@ export default function Weather() {
         </div>
         <span className="temperature">{weatherData.temp}</span>
         <span className="units">°F</span>
-        <div className="container weather-details">
+        <div className="weather-details">
           <div className="row justify-content-center">
             <div className="col-3 with-border">
               <i className="fa-solid fa-wind" />
-              <span className="full-description"> Wind</span>
-              <br />
-              <span>{weatherData.wind}</span> mph
+              <span className="full-description">{" "}Wind Speed</span>
+              <div>{weatherData.wind} mph</div>
             </div>
             <div className="col-3">
               <i className="fa-solid fa-temperature-high" />
-              <span className="full-description"> Feels Like</span>
-              <br />
-              <span>{weatherData.feelsLike}</span>°F
+              <span className="full-description">{" "}Feels Like</span>
+              <div>{weatherData.feelsLike}°F</div>
             </div>
-          </div>
-          <div className="row justify-content-center">
-            <div className="col-3 with-border">
-              <i className="fa-solid fa-droplet" />
-              <span className="full-description"> Humidity</span>
-              <br />
-              <span>{weatherData.humidity}</span>%
-            </div>
-            <div className="col-3">
-              <i className="fa-solid fa-sun"></i>
-              <span className="full-description"> UV Index</span>
-              <br />
-              <span>{weatherData.uvIndex}</span>
+            <div className="row justify-content-center">
+              <div className="col-3 with-border">
+                <i className="fa-solid fa-droplet" />
+                <span className="full-description">{" "}Humidity</span>
+                <div>{weatherData.humidity}</div>
+              </div>
+              <div className="col-3">
+                <i className="fa-solid fa-sun" />
+                <span className="full-description">{" "}UV Index</span>
+                <div>{weatherData.uvIndex}</div>
+              </div>
             </div>
           </div>
         </div>
