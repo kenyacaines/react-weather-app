@@ -10,6 +10,7 @@ export default function App() {
           href="https://incandescent-khapse-1a9ad1.netlify.app/"
           target="_blank"
           rel="noreferrer"
+          title="www.kenyacaines.com"
         >
           Kenya Caines
         </a>{" "}
