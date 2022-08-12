@@ -7,12 +7,11 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
-      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
       temperature: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed),
@@ -21,10 +20,10 @@ export default function Weather(props) {
       uvIndex: 10,
     });
   }
-  function search(){
-  const apiKey = "fab4debfd3c1e84b570ae548b866f1b0";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-  axios.get(apiUrl).then(handleResponse);
+  function search() {
+    const apiKey = "fab4debfd3c1e84b570ae548b866f1b0";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   function handleSubmit(event) {
@@ -67,6 +66,6 @@ export default function Weather(props) {
     );
   } else {
     search();
-  return "Loading...";
+    return "Loading...";
   }
 }
