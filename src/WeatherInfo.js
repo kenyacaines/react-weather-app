@@ -23,7 +23,7 @@ export default function WeatherInfo(props) {
               <WeatherIcon code={props.data.icon} size={52} />
             </div>
             <div>
-              <WeatherTemperature fahrenheit={props.data.temperature} />
+              <WeatherTemperature celsius={props.data.temperature} />
             </div>
           </div>
         </div>
@@ -35,14 +35,18 @@ export default function WeatherInfo(props) {
               <i className="fa-solid fa-wind" />
               <span> Wind Speed</span>
             </div>
-            <div className="detail-value text-center">{props.data.wind} mph</div>
+            <div className="detail-value text-center">
+              {props.data.wind} km/h
+            </div>
           </div>
           <div className="col-3">
             <div className="detail-title text-center">
               <i className="fa-solid fa-temperature-high" />
               <span> Feels Like</span>
             </div>
-            <div className="detail-value text-center">{props.data.feelsLike}°F</div>
+            <div className="detail-value text-center">
+              {props.data.feelsLike}°C
+            </div>
           </div>
           <div className="row justify-content-center">
             <div className="col-3 with-border">
@@ -50,14 +54,18 @@ export default function WeatherInfo(props) {
                 <i className="fa-solid fa-droplet" />
                 <span> Humidity</span>
               </div>
-              <div className="detail-value text-center">{props.data.humidity}%</div>
+              <div className="detail-value text-center">
+                {props.data.humidity}%
+              </div>
             </div>
             <div className="col-3">
               <div className="detail-title text-center">
                 <i className="fa-solid fa-sun" />
                 <span> UV Index</span>
               </div>
-              <div className="detail-value text-center">{props.data.uvIndex}</div>
+              <div className="detail-value text-center">
+                {props.data.uvIndex}
+              </div>
             </div>
           </div>
         </div>
