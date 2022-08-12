@@ -78,12 +78,13 @@
   line-height: 1;
   margin-left: 18px;
 }
-.Weather .units {
+.Weather .unit {
   position: relative;
   top: -25px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1;
+  margin-left: 10px;
 }
 .Weather .col-3 {
   width: 36%;
@@ -95,7 +96,7 @@
   border-right-width: 2px;
 }
 .Weather .full-description {
- font-size: 16px;
- line-height: 16px;
-margin-left: 5px
+  font-size: 16px;
+  line-height: 16px;
+  margin-left: 5px;
 }
