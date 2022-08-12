@@ -1,14 +1,9 @@
 .App{
-  max-width: 800px;
-  margin: 30px auto;
-}
-.App body {
-  margin: 0;
-  font-family: sans-serif;
-  line-height: 1.5;
-  color: #383737;
+  max-width: 600px;
+  margin: 60px auto;
 }
 .App footer {
   font-size: 11px;
-  margin: 10px 0;
+  margin-top: 10px;
+  margin-left: 10px;
 }

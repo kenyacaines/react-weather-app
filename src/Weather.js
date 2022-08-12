@@ -37,9 +37,9 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form className="mb-3" onSubmit={handleSubmit}>
-          <div className="row justify-content-center">
-            <div className="col-4">
+        <form onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="col-8">
               <input
                 type="search"
                 className="form-control shadow-sm"
@@ -49,15 +49,8 @@ export default function Weather(props) {
                 onChange={handleCityChange}
               />
             </div>
-            <div className="col-2">
-              <button className="btn btn shadow-sm" type="submit">
-                <i className="fa-solid fa-magnifying-glass"></i>
-              </button>
-              <span className="location-buton">
-                <button className="btn btn shadow-sm" type="submit">
-                  <i className="fa-solid fa-location-dot"></i>
-                </button>
-              </span>
+            <div className="col-4">
+             <input type="submit" value="Search" className="btn btn-primary w-100" />
             </div>
           </div>
         </form>
