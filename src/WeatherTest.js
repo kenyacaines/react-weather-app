@@ -1,40 +1,28 @@
 import React, { useState } from "react";
-import "./WeatherTemperature.css"
+import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
+import "./WeatherInfo.css";
 
-export default function WeatherTemperature(props) {
-  const [temp, setTemp] = useState("celsius");
-  const [windSpeed, setWindSpeed] = useState("windSpeedkm");
-  const [feelsLike, setFeelsLike] = useState("feelsLikeCelsius");
-
-  function showImperial(event) {
-    event.preventDefault();
-    setTemp("fahrenheit");
-    setWindSpeed("windSpeedMph");
-    setFeelsLike("feelsLikeFahrenheit");
-  }
-
-  function showMetric(event) {
-    event.preventDefault();
-    setTemp("celsius");
-    setWindSpeed("windSpeedKm");
-    setFeelsLike("feelsLikeCelsius");
-  }
-
-  function fahrenheit() {
-    return (props.celsius * 9) / 5 + 32;
-  }
-
-  function windSpeedMph() {
-    return props.windSpeedKm / 1.609;
-  }
-
-  function feelsLikeFahrenheit() {
-    return (props.feelsLikeCelsius * 9) / 5 + 32;
-  }
-
-  if (temp === "celsius" && windSpeed==="windSpeedkm" && feelsLike==="feelsLikeCelsius") {
+if (temp === "celsius" && windSpeed==="windSpeedkm" && feelsLike==="feelsLikeCelsius") {
     return (
       <div className="WeatherTemperature">
+        <div className="row mt-3">
+        <div className="col-6">
+          <h1>{props.data.city}</h1>
+          <ul>
+            <li>
+              <FormattedDate date={props.data.date} />
+            </li>
+            <li className="text-capitalize">{props.data.description}</li>
+          </ul>
+        </div>
+        <div className="col-6">
+          <div className="temperature-container d-flex justify-content-end">
+            <div>
+              <WeatherIcon code={props.data.icon} size={52} />
+            </div>
+            <div></div>
         <span className="temperature">{Math.round(props.celsius)}</span>
         <span className="unit">
           °C |{" "}
@@ -77,7 +65,9 @@ export default function WeatherTemperature(props) {
                   <i className="fa-solid fa-sun" />
                   <span> UV Index</span>
                 </div>
-                <div className="detail-value text-center">{props.uvIndex}</div>
+                <div className="detail-value text-center">
+                  {props.uvIndex}
+                </div>
               </div>
             </div>
           </div>

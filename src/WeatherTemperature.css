@@ -1,0 +1,41 @@
+.WeatherTemperature .temperature {
+  color: rgb(33, 33, 33);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 64px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.WeatherTemperature canvas {
+  margin: 10px auto;
+}
+.WeatherTemperature .unit {
+  position: relative;
+  top: -32px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  margin-left: 5px;
+}
+.WeatherTemperature .weather-details-container {
+  margin-top: 50px;
+}
+.WeatherTemperature .col-3 {
+  width: 36%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.WeatherTemperature .with-border {
+  border-right-color: rgba(86, 61, 124, 0.2);
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+.WeatherTemperature .detail-title {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 16px;
+}
+.WeatherTemperature .detail-value {
+  margin-top: 5px;
+  font-weight: 100;
+}

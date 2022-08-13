@@ -6,6 +6,7 @@ import "./Weather.css";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  
   function handleResponse(response) {
     setWeatherData({
       ready: true,
@@ -18,7 +19,7 @@ export default function Weather(props) {
       humidity: Math.round(response.data.main.humidity),
       feelsLike: Math.round(response.data.main.feels_like),
       uvIndex: 10,
-    });
+    })
   }
   function search() {
     const apiKey = "fab4debfd3c1e84b570ae548b866f1b0";
