@@ -24,13 +24,13 @@ export default function FormattedDate(props) {
    if (hours>11){
     return (
         <div>
-            {day} {hours}:{minutes} PM
+            {day}, {hours}:{minutes} PM
             </div>
     );
   }else{
   return (
     <div>
-      {day} {hours}:{minutes} AM
+      {day}, {hours}:{minutes} AM
     </div>
   );
   }
