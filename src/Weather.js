@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
+import DetailsButton from "./DetailsButton";
 import axios from "axios";
 import "./Weather.css";
 
@@ -19,7 +20,7 @@ export default function Weather(props) {
       humidity: Math.round(response.data.main.humidity),
       feelsLike: Math.round(response.data.main.feels_like),
       uvIndex: 10,
-    })
+    });
   }
   function search() {
     const apiKey = "fab4debfd3c1e84b570ae548b866f1b0";
@@ -40,7 +41,7 @@ export default function Weather(props) {
       <div className="Weather">
         <form onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-8">
+            <div className="col-6">
               <input
                 type="search"
                 className="form-control shadow-sm"
@@ -50,7 +51,7 @@ export default function Weather(props) {
                 onChange={handleCityChange}
               />
             </div>
-            <div className="col-4">
+            <div className="col-2">
               <input
                 type="submit"
                 value="Search"
@@ -60,6 +61,14 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
+        <div className="selection-container">
+          <div className="row">
+            <div className="col">Forecast</div>
+            <div className="col">
+              <DetailsButton data={weatherData} />
+            </div>
+          </div>
+        </div>
       </div>
     );
   } else {
