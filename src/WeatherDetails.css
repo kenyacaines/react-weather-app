@@ -1,6 +1,6 @@
 .WeatherDetails {
   display: inline;
-  margin-top: 50px;
+  margin: 30px 0;
 }
 .WeatherDetails .col-3 {
   width: 36%;

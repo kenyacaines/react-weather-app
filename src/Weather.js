@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
-import DetailsButton from "./DetailsButton";
+import WeatherDetails from "./WeatherDetails";
 import axios from "axios";
 import "./Weather.css";
+
+
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
+    console.log(response.data);
     setWeatherData({
       ready: true,
       city: response.data.name,
@@ -38,6 +41,7 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
@@ -63,8 +67,11 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
-        <DetailsButton data={weatherData} />
-        <WeatherForecast coords={weatherData.coords}/>
+        <WeatherDetails
+          wind={weatherData.wind}
+          humidity={weatherData.humidity}
+        />
+        <WeatherForecast coords={weatherData.coords} />
       </div>
     );
   } else {
