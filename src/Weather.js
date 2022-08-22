@@ -11,7 +11,6 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       city: response.data.name,
@@ -23,12 +22,11 @@ export default function Weather(props) {
       wind: Math.round(response.data.wind.speed),
       humidity: Math.round(response.data.main.humidity),
       feelsLike: Math.round(response.data.main.feels_like),
-      uvIndex: 10,
     });
   }
   function search() {
     const apiKey = "fab4debfd3c1e84b570ae548b866f1b0";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -63,13 +61,45 @@ export default function Weather(props) {
                 className="btn btn-primary w-100"
               />
             </div>
-          </div>
+           </div>
         </form>
         <WeatherInfo data={weatherData} />
         <WeatherButtons data={weatherData} />
       </div>
     );
-  } else {
+  }
+  if (weatherData.ready) {
+     return (
+       <div className="Weather">
+         <form onSubmit={handleSubmit}>
+           <div className="row">
+             <div className="col-6">
+               <input
+                 type="search"
+                 className="form-control shadow-sm"
+                 placeholder="Enter a city..."
+                 autoFocus={false}
+                 autoComplete="off"
+                 onChange={handleCityChange}
+               />
+             </div>
+             <div className="col-2">
+               <input
+                 type="submit"
+                 value="Search"
+                 className="btn btn-primary w-100"
+               />
+             </div>
+           </div>
+         </form>
+         <WeatherInfo data={weatherData} />
+         <WeatherButtons data={weatherData} />
+       </div>
+     );
+  }
+  
+  
+  else {
     search();
     return "Loading...";
   }

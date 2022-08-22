@@ -30,7 +30,7 @@ export default function WeatherButtons(props) {
   }
 
   function weatherDetails() {
-    return <WeatherDetails wind={props.wind} humidity={props.humidity} />;
+    return <WeatherDetails wind={props.wind} humidity={props.humidity} feelsLike={props.data.feelsLike} />;
   }
 
   if (info === "hourly") {
@@ -38,17 +38,15 @@ export default function WeatherButtons(props) {
       <div className="WeatherButtons">
         <div className="buttons">
           <span className="hourly">
-            <a href="/"> Hourly</a>
+            <a className="button-link-active" href="/"> Hourly</a>
           </span>
           <span className="daily">
             <a href="/" onClick={showDaily}>
-              {" "}
               Daily
             </a>
           </span>
-          <span className="Details">
+          <span className="details">
             <a href="/" onClick={showDetails}>
-              {" "}
               Details
             </a>
           </span>
@@ -64,17 +62,14 @@ export default function WeatherButtons(props) {
         <div className="buttons">
           <span className="hourly">
             <a href="/" onClick={showHourly}>
-              {" "}
               Hourly
             </a>
           </span>
           <span className="daily">
-            <a href="/"> Daily</a>
+            <a className="button-link-active" href="/">Daily</a>
           </span>
           <span className="Details">
-            <a href="/" onClick={showDetails}>
-              {" "}
-              Details
+            <a href="/" onClick={showDetails}>Details
             </a>
           </span>
         </div>
@@ -89,18 +84,16 @@ export default function WeatherButtons(props) {
         <div className="buttons">
           <span className="hourly">
             <a href="/" onClick={showHourly}>
-              {" "}
               Hourly
             </a>
           </span>
           <span className="daily">
             <a href="/" onClick={showDaily}>
-              {" "}
               Daily
             </a>
           </span>
           <span className="Details">
-            <a href="/"> Details</a>
+            <a className="button-link-active" href="/">Details</a>
           </span>
         </div>
         <hr />

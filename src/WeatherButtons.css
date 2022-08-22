@@ -8,10 +8,10 @@
 .WeatherButtons a {
   text-decoration: none;
   color: rgb(135, 135, 135);
-  margin-right: 20px;
+  padding-right: 20px;
 }
 
-.WeatherButtons a:active{
+.WeatherButtons a.button-link-active{
     text-decoration: underline;
 }
 
