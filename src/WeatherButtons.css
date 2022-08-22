@@ -1,0 +1,20 @@
+.WeatherButtons {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.WeatherButtons .buttons{
+    margin-left: 10px;
+}
+.WeatherButtons a {
+  text-decoration: none;
+  color: rgb(135, 135, 135);
+  margin-right: 20px;
+}
+
+.WeatherButtons a:active{
+    text-decoration: underline;
+}
+
+.WeatherButtons hr{
+    margin-top: 5px;
+}
