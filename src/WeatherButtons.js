@@ -30,7 +30,15 @@ export default function WeatherButtons(props) {
   }
 
   function weatherDetails() {
-    return <WeatherDetails wind={props.wind} humidity={props.humidity} feelsLike={props.data.feelsLike} />;
+    return (
+      <WeatherDetails
+        wind={props.data.wind}
+        humidity={props.data.humidity}
+        feelsLike={props.data.feelsLike}
+        tempMax={props.data.tempMax}
+        tempMin={props.data.tempMin}
+      />
+    );
   }
 
   if (info === "hourly") {
@@ -105,7 +113,3 @@ export default function WeatherButtons(props) {
   }
 }
 
-//make default hourly forecast
-// on click for each return the information or the component
-//on click set one of the buttons to active which will return the information from the component
-// return the information underneath the hr so you will need to have a use state and set that use state to what you are returning.

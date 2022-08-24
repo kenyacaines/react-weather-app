@@ -1,13 +1,16 @@
 .WeatherInfo {
+  font-family: 'Open Sans', sans-serif;
   margin-top: 20px;
 }
 .WeatherInfo h1 {
+  font-family: 'Prompt', sans-serif;
   font-size: 36px;
   font-weight: 300;
   line-height: 29px;
   margin: 20px 0 10px;
 }
 .WeatherInfo h2 {
+  font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   font-weight: 300;
   line-height: 29px;
@@ -20,6 +23,7 @@
   margin-top: 50px;
 }
 .WeatherInfo .temperature{
+  font-family: 'Prompt', sans-serif;
   font-size: 150px;
   font-weight: 100;
   line-height: 64px;
@@ -32,10 +36,11 @@
   margin-bottom: 30px;
 }
 .WeatherInfo .unit{
+  font-family: 'Prompt', sans-serif;
   position: relative;
-  top: -56px;
-  font-size: 80px;
-  font-weight: 400;
+  top: -66px;
+  font-size: 72px;
+  font-weight: 200;
   line-height: 1;
   margin-left: 5px;
 }

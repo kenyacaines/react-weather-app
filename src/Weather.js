@@ -11,6 +11,7 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
+    console.log(response);
     setWeatherData({
       ready: true,
       city: response.data.name,
@@ -22,6 +23,9 @@ export default function Weather(props) {
       wind: Math.round(response.data.wind.speed),
       humidity: Math.round(response.data.main.humidity),
       feelsLike: Math.round(response.data.main.feels_like),
+      tempMax: Math.round(response.data.main.temp_max),
+      tempMin: Math.round(response.data.main.temp_min),
+      
     });
   }
   function search() {
