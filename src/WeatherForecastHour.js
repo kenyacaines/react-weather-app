@@ -28,7 +28,7 @@ export default function WeatherForecastHour(props) {
 
   return (
     <div>
-      <div className="WeatherForecast-hour mb-2">{hour()}</div>
+      <div className="WeatherForecast-hour mb-3">{hour()}</div>
       <WeatherIcon code={props.data.weather[0].icon} size={48} />
       <div className="WeatherForecast-temperature">
         <span className="WeatherHourlyForecast-temperature">

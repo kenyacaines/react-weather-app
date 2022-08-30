@@ -9,7 +9,7 @@ export default function App() {
         <Weather defaultCity = "Austin" />
       </div>
       <footer>
-        This project was coded by{" "}
+        This project was coded with love by{" "}
         <a
           href="https://incandescent-khapse-1a9ad1.netlify.app/"
           target="_blank"
